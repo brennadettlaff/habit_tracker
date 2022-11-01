@@ -1,7 +1,7 @@
-from unittest.util import _MAX_LENGTH
 from django.db import models
+from habit.models import Habit
 
 class Entry(models.Model):
-    habit = models.CharField(max_length=100)
+    habit = models.ForeignKay(Habit, on_delete=models.CASCADE)
     date = models.DateField()
-    unit = models.IntegerField()
+    amount = models.IntegerField()
