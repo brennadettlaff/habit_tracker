@@ -10,5 +10,5 @@ from .serializers import EntrySerializer
 def entry_list(request):
     if request.method == 'GET':
         entry = Entry.objects.all()
-        serializer = EntrySerializer(habit, many=True)
+        serializer = EntrySerializer(entry, many=True)
         return Response(serializer.data)
