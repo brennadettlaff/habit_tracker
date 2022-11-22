@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('view/', views.entry_list),
+    path('get/', views.all_entries),
+    path('view/<int:habit_id>/', views.entry_list),
 ]

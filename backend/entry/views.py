@@ -7,8 +7,15 @@ from .models import Entry
 from .serializers import EntrySerializer
 
 @api_view(['GET'])
-def entry_list(request):
+def all_entries(request):
     if request.method == 'GET':
         entry = Entry.objects.all()
+        serializer = EntrySerializer(entry, many=True)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def entry_list(request, habit_id):
+    if request.method == 'GET':
+        entry = Entry.objects.filter(habit_id=habit_id)
         serializer = EntrySerializer(entry, many=True)
         return Response(serializer.data)
