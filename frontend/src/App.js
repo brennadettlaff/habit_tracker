@@ -1,8 +1,20 @@
 
 function App() {
+
+
+
+
   return (
     <div >
-      <h3>test</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Habit</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   );
 }
