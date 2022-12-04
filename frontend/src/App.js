@@ -1,3 +1,4 @@
+import DisplayEntries from "./Components/DisplayEntries";
 
 function App() {
 
@@ -6,7 +7,7 @@ function App() {
 
   return (
     <div>
-
+      <DisplayEntries />
     </div>
   );
 }
