@@ -1,13 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 const DisplayEntries = () => {
     const [entries, setEntries] = useState([])
 
+    useEffect(() => {
+        getEntries();
+    }, [])
+
     async function getEntries(){
         let response = await axios.get('http://127.0.0.1:8000/api/entry/view/1/')
         setEntries(response.data)
-        console.log(response.data)
+        console.log("Test", response.data)
     }
 
     return ( 
