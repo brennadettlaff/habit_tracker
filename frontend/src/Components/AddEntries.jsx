@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
 const AddEntries = () => {
     const [habit, setHabit] = useState(0);
     const [date, setDate] = useState('');
@@ -13,6 +15,12 @@ const AddEntries = () => {
         }
         console.log(newEntry)
     }
+
+    async function addNewEntry(newEntry) {
+        let response = await axios.post('http://127.0.0.1:8000/api/entry/get/', newEntry)
+
+    }
+
     return ( 
         <div>
             <form onSubmit={handleSubmit}>
