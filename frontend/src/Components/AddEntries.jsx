@@ -14,11 +14,12 @@ const AddEntries = () => {
             amount: amount,
         }
         console.log(newEntry)
+        addNewEntry(newEntry)
     }
 
     async function addNewEntry(newEntry) {
         let response = await axios.post('http://127.0.0.1:8000/api/entry/get/', newEntry)
-
+        window.location.reload();
     }
 
     return ( 
